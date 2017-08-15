@@ -2,6 +2,7 @@ const assert = require('chai').assert;
 //const sayHello = require('../app').sayHello;
 //const addNumbers = require('../app').addNumbers;
 const app = require('../app');
+let sinon = require('sinon');
 
 describe('App', function(){
 
@@ -30,7 +31,22 @@ describe('addNumbers',function(){
     let result = app.addNumbers(2,3);
     assert.typeOf(result,'number');
   });
-  
+
+});
+
+
+describe('sum function', function(){
+
+  it('sum function should return 25', function(){
+  let result = app.sum(5,5,5,5,5);
+  assert.equal(result,25);
+  });
+
+  it('sum should return type number', function(){
+    let result = app.sum(2,3,5,8,7,14,3);
+    assert.typeOf(result,'number');
+  });
+
 });
 
 });
