@@ -38,14 +38,17 @@ describe('addNumbers',function(){
 describe('sum function', function(){
 
   it('sum function should return 25', function(){
+    let sinonSpy = sinon.spy(app.sum);
   let result = app.sum(5,5,5,5,5);
   assert.equal(result,25);
+  assert(sinonSpy.calledOnce);
   });
 
-  it('sum should return type number', function(){
-    let result = app.sum(2,3,5,8,7,14,3);
-    assert.typeOf(result,'number');
-  });
+  // it('sum should return type number', function(){
+  //   let result = app.sum(2,3,5,8,7,14,3);
+  //   assert.typeOf(result,'number');
+  // });
+
 
 });
 
